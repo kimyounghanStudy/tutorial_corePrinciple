@@ -1,19 +1,29 @@
 package com.example.kimyoungstudy.service;
 
 import com.example.kimyoungstudy.domain.Member;
+import com.example.kimyoungstudy.repository.JpaMemberRepository;
+import com.example.kimyoungstudy.repository.MemberRepository;
 import com.example.kimyoungstudy.repository.MemorryMemberRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
+@Transactional
 class MemberServiceTest {
 
-    MemberService memberService;
-    MemorryMemberRepository memberRepository;
-    @BeforeEach
+    @Autowired MemberService memberService;
+    @Autowired
+    MemberRepository memberRepository;
+
+
+  /*  @BeforeEach
     public void beforeEach(){
         memberRepository = new MemorryMemberRepository();
         memberService = new MemberService(memberRepository);
@@ -23,12 +33,12 @@ class MemberServiceTest {
     public void atferEach(){
         memberRepository.clearStore();
     }
-
+*/
     @Test
     void 회원가입() {
         //given
         Member member = new Member();
-        member.setName("spring");
+        member.setName("spring23");
         //when
         Long saveId = memberService.join(member);
         //then
