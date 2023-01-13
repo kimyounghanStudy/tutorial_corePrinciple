@@ -11,8 +11,14 @@ import com.example.springcoreprinciple.order.OrderServiceImpl;
 public class OrderApp {
 
     public static void main(String[] args) {
+
+        AppConfig appConfig = new AppConfig();
+        OrderService orderService = appConfig.orderService();
+        Memberservice memberservice = appConfig.memberservice();
+
+/*
         Memberservice memberservice = new MemberServiceImple();
-        OrderService orderService = new OrderServiceImpl();
+        OrderService orderService = new OrderServiceImpl();*/
 
         Long memberId= 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);

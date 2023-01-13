@@ -8,7 +8,12 @@ import com.example.springcoreprinciple.member.Memberservice;
 public class MemberApp {
 
     public static void main(String[] args) {
-        Memberservice memberservice = new MemberServiceImple();
+
+        AppConfig appConfig = new AppConfig();
+
+        Memberservice memberservice = appConfig.memberservice();
+
+        /*Memberservice memberservice = new MemberServiceImple();*/
 
         /**컨트롤 알트 v 해주면  new 객체 에서 자동으로 앞에 쓸말 생성해줌 .!*/
         Member member = new Member(1L, "memberA", Grade.VIP);

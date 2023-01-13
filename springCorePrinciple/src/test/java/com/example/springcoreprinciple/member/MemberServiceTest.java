@@ -1,11 +1,21 @@
 package com.example.springcoreprinciple.member;
 
+import com.example.springcoreprinciple.AppConfig;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class MemberServiceTest {
 
-    Memberservice memberservice = new MemberServiceImple();
+    Memberservice memberservice;
+
+    @BeforeEach
+    public void beforeEach(){
+        AppConfig appConfig = new AppConfig();
+        memberservice = appConfig.memberservice();
+    }
+
+    /*Memberservice memberservice = new MemberServiceImple();*/
     @Test
     void join(){
         //given
