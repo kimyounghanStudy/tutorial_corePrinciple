@@ -11,12 +11,17 @@ import com.example.springcoreprinciple.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements  OrderService{
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
     /*private final DiscountPolicy discountPolicy = new FixDiscountPolicy();*/
 /*
     private final DiscountPolicy discountPolicy = new RateDiscountPolicy();*/  //변경시 DIP . OCP위반
 
-    private DiscountPolicy discountPolicy ; //final 뺀 이유는... final은 값을 할당해야하기 때문에
+    private  final DiscountPolicy discountPolicy ; //  처음수정에 ...final 뺀 이유는... final은 값을 할당해야하기 때문에
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
