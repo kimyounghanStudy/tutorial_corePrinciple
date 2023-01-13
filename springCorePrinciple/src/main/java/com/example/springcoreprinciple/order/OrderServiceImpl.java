@@ -2,6 +2,7 @@ package com.example.springcoreprinciple.order;
 
 import com.example.springcoreprinciple.discount.DiscountPolicy;
 import com.example.springcoreprinciple.discount.FixDiscountPolicy;
+import com.example.springcoreprinciple.discount.RateDiscountPolicy;
 import com.example.springcoreprinciple.member.Member;
 import com.example.springcoreprinciple.member.MemberRepository;
 import com.example.springcoreprinciple.member.MemoryMemberRepository;
@@ -11,8 +12,11 @@ import com.example.springcoreprinciple.member.MemoryMemberRepository;
 public class OrderServiceImpl implements  OrderService{
 
     private final MemberRepository memberRepository = new MemoryMemberRepository();
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    /*private final DiscountPolicy discountPolicy = new FixDiscountPolicy();*/
+/*
+    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();*/  //변경시 DIP . OCP위반
 
+    private DiscountPolicy discountPolicy ; //final 뺀 이유는... final은 값을 할당해야하기 때문에
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
