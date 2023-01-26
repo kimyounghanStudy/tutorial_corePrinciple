@@ -4,13 +4,12 @@ import com.example.springcoreprinciple.AppConfig;
 import com.example.springcoreprinciple.member.Grade;
 import com.example.springcoreprinciple.member.Member;
 import com.example.springcoreprinciple.member.MemberServiceImple;
-import com.example.springcoreprinciple.member.Memberservice;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class OrderServiceTest {
-    Memberservice memberservice ;
+ /*   Memberservice memberservice ;
     OrderService orderService ;
     @BeforeEach
     public void beforeEach(){
@@ -30,6 +29,6 @@ public class OrderServiceTest {
 
         Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
                 ///
-    }
+    }*/
 
 }

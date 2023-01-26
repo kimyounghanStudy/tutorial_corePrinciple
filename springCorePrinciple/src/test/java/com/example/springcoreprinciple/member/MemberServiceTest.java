@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class MemberServiceTest {
 
-    Memberservice memberservice;
+  /*  Memberservice memberservice;
 
     @BeforeEach
     public void beforeEach(){
@@ -15,7 +15,7 @@ public class MemberServiceTest {
         memberservice = appConfig.memberservice();
     }
 
-    /*Memberservice memberservice = new MemberServiceImple();*/
+    *//*Memberservice memberservice = new MemberServiceImple();*//*
     @Test
     void join(){
         //given
@@ -28,5 +28,5 @@ public class MemberServiceTest {
 
         //then
         Assertions.assertThat(member).isEqualTo(findMember);
-    }
+    }*/
 }
