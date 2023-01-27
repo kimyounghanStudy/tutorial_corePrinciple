@@ -39,6 +39,7 @@ public class SingletonTest {
         assertThat(instance1).isSameAs(instance2);
         //same ==
         //equal.. 같은가..?
+
     }
 
     @Test
