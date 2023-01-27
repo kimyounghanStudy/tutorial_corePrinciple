@@ -30,4 +30,9 @@ public class OrderServiceImpl implements  OrderService{
         //단일 책임 원칙이 잘 지켜짐 .. 왜 ? 일을 시키니까 일 을 시키는것이 중요 하다 !!!!!!!!!
         return  new Order(memberId,itemName,itemPrice,discountPrice);
     }
+
+    //테스트 용도
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
 }
