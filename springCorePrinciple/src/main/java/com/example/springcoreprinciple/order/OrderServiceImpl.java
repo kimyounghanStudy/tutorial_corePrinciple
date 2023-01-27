@@ -6,9 +6,11 @@ import com.example.springcoreprinciple.discount.RateDiscountPolicy;
 import com.example.springcoreprinciple.member.Member;
 import com.example.springcoreprinciple.member.MemberRepository;
 import com.example.springcoreprinciple.member.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 
-
+@Component
 public class OrderServiceImpl implements  OrderService{
 
     private final MemberRepository memberRepository;
@@ -18,6 +20,7 @@ public class OrderServiceImpl implements  OrderService{
 
     private  final DiscountPolicy discountPolicy ; //  처음수정에 ...final 뺀 이유는... final은 값을 할당해야하기 때문에
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
