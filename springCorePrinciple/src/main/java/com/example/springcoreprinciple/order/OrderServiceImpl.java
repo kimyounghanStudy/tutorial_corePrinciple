@@ -13,15 +13,33 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderServiceImpl implements  OrderService{
 
-    private final MemberRepository memberRepository;
+    private final   MemberRepository memberRepository;
     /*private final DiscountPolicy discountPolicy = new FixDiscountPolicy();*/
 /*
     private final DiscountPolicy discountPolicy = new RateDiscountPolicy();*/  //변경시 DIP . OCP위반
 
-    private  final DiscountPolicy discountPolicy ; //  처음수정에 ...final 뺀 이유는... final은 값을 할당해야하기 때문에
+    private final  DiscountPolicy discountPolicy ; //  처음수정에 ...final 뺀 이유는... final은 값을 할당해야하기 때문에
+
+    //생성자가 하나일대는 Autowired 생략가능 ..!
+
+
+ /*   @Autowired
+    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
+        System.out.println("후 순위 discountPolicy = " + discountPolicy);
+        this.discountPolicy = discountPolicy;
+    }
+
+    @Autowired
+    public void setMemberRepository(MemberRepository memberRepository) {
+        System.out.println("후 순위 memberRepository = " + memberRepository);
+        this.memberRepository = memberRepository;
+    }*/
 
     @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        System.out.println("무조건 첫 번째 호출 memberRepository = " + memberRepository);
+        System.out.println("memberRepository = " + memberRepository);
+        System.out.println("discountPolicy = " + discountPolicy);
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }

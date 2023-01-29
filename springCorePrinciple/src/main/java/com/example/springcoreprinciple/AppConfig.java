@@ -1,7 +1,6 @@
 package com.example.springcoreprinciple;
 
 import com.example.springcoreprinciple.discount.DiscountPolicy;
-import com.example.springcoreprinciple.discount.FixDiscountPolicy;
 import com.example.springcoreprinciple.discount.RateDiscountPolicy;
 import com.example.springcoreprinciple.member.MemberRepository;
 import com.example.springcoreprinciple.member.MemberService;
@@ -23,11 +22,11 @@ public class AppConfig {     //@퀄리파이 !
 
     @Bean
     public OrderService orderService(){
-        return new OrderServiceImpl(memberRepository(), getDiscountPolicy());
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     @Bean
-    public DiscountPolicy getDiscountPolicy() {
+    public DiscountPolicy discountPolicy() {
         return new RateDiscountPolicy();
     }
     @Bean

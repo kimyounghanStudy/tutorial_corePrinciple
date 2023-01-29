@@ -9,6 +9,8 @@ public class MemberServiceImple implements MemberService{
     /**자장할 구현체를 선택 역할과 구현 ..! 그니까  구현체가 메모리 멤버레포지토리로 선정 추가로 컨트롤 쉬프트 엔터 애용해주자*/
     private  final MemberRepository memberRepository ;    ///
 
+
+
     @Autowired // ac.getBean(MemberRepository.class)
     public MemberServiceImple(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;   //외부
