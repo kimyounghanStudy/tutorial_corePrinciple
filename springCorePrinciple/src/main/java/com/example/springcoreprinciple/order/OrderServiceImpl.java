@@ -39,7 +39,7 @@ public class OrderServiceImpl implements  OrderService{
     }*/
 
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository,  DiscountPolicy discountPolicy) {
         System.out.println("무조건 첫 번째 호출 memberRepository = " + memberRepository);
         System.out.println("memberRepository = " + memberRepository);
         System.out.println("discountPolicy = " + discountPolicy);
