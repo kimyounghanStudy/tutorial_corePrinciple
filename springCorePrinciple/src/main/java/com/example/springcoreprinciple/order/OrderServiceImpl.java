@@ -1,5 +1,6 @@
 package com.example.springcoreprinciple.order;
 
+import com.example.springcoreprinciple.annotation.MainDiscountPolicy;
 import com.example.springcoreprinciple.discount.DiscountPolicy;
 import com.example.springcoreprinciple.discount.FixDiscountPolicy;
 import com.example.springcoreprinciple.discount.RateDiscountPolicy;
@@ -39,7 +40,7 @@ public class OrderServiceImpl implements  OrderService{
     }*/
 
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository,  DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         System.out.println("무조건 첫 번째 호출 memberRepository = " + memberRepository);
         System.out.println("memberRepository = " + memberRepository);
         System.out.println("discountPolicy = " + discountPolicy);
