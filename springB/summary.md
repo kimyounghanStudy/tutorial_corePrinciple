@@ -1,4 +1,6 @@
-# 스프링 웹 개발 기초
+# 스프링 기초
+
+## 스프링 웹 개발 기초
 
 1. 정적컨텐츠
   웹브라우저 요청 -> 내장 톰캣 서버([WAS](http://sungbine.github.io/tech/post/2015/02/15/tomcat%EA%B3%BC%20apache%EC%9D%98%20%EC%97%B0%EB%8F%99.html))-> 스프링컨테이너~ 관련 컨트롤러 찾음
@@ -17,3 +19,21 @@
 >자세한 내용은 MVC강의~ 나중에 링크 연결하겠음!
 
 ---
+
+## 스프링 빈과 의존관계
+> 생성자에 @Autowired가 달려있다면 스프링이 연관된 객체를 스프링 컨테이너에서 찾아서 넣어줌!([DI](https://github.com/j-jh-Study/technical-interview/blob/main/DI.md))
+  그럼 스프링 컨테이너에 등록하는건...! 
+  컴포먼트스캔 자동 의존관계 설정 or 직접 코드짜서 등록하기
+  ```
+  생성자에 @AutoWired 사용시 객체 생성 시점에 빈주입!!.. 생성자가 한개만 있다면
+  @AutoWired 생략가능
+  ```
+  
+1. 컴포넌트 스캔과 자동 의존관계 설정
+  컴포먼트 스캔 ~ @Component 달려있으면 스프링 빈으로 자동등록
+  @Controller , @Service , @Repository 등도 들어가보면 @Component 포함
+2. 자바 코드로 직접 스프링 빈 등록하기
+  @Configuration ~ @Bean의 조합 
+
+
+
