@@ -35,5 +35,12 @@
 2. 자바 코드로 직접 스프링 빈 등록하기
   @Configuration ~ @Bean의 조합 
 
+---
 
+## 스프링DB 접근기술
 
+1. 순수 Jdbc
+2. 스프링 jdbcTemplate // MyBatis -> 반복코드삭제, but SQL은 직접 작성
+3. JPA -> SQL도 대신 해줌! 엔티티맵핑 분리..!?
+4. 스프링 데이터 JPA -> 반복코드제거, 편의성 추가! 
+  [JpaRepository]->[PagingAndSortingRepository->CrudRepository->Repository]
